@@ -20,18 +20,34 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="/">Home</a></li>
-                    <li><a href="/blogs">Blogs</a></li>
-                    <li><a href="/users">Users</a></li>
+                    <li ><a href="/">Home</a></li>
+                    <li class="active"><a href="/blogs">Blogs</a></li>
+                    <li ><a href="/users">Users</a></li>
                 </ul>
             </div>
         </div>
     </div>
 </div>
-
 <div class="wrapper">
     <div class="container">
-        <h3>Welcome to Spring boot</h3>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>BlogList</h3>
+                <div class="buttons-stripe">
+                    <a class="btn btn-default btn-xs bstripe" href="/blogs/add">Add New</a>
+                </div>
+                <table class="table table-striped">
+                    <tbody>
+                    <tr th:each="blog : ${blogsList}">
+                        <td th:text="${blog.getId()}">1</td>
+                        <td th:text="${blog.getTitle()}">1</td>
+                        <td th:text="${blog.getContent()}">1</td>
+                        <td th:text="${blog.getPubDate()}">1</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
 
