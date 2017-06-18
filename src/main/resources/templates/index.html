@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hello Spring Boot!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.6/css/bootstrap.min.css"
+          rel="stylesheet" media="screen" />
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<div>
+    <!-- ============================================================================ -->
+    <!-- This content is only used for static prototyping purposes (natural templates)-->
+    <!-- and is therefore entirely optional.                                           -->
+    <!-- ============================================================================ -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Hello Spring Boot!</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>BlogList</h3>
+                    <div class="buttons-stripe">
+                        <a class="btn btn-default btn-xs bstripe" href="/blogs/add">Add New</a>
+                    </div>
+                    <table class="table table-striped">
+                        <tbody>
+                        <tr th:each="blog : ${blogList}">
+                            <td th:text="${blog.getId()}">1</td>
+                            <td th:text="${blog.getTitle()}">1</td>
+                            <td th:text="${blog.getContent()}">1</td>
+                            <td th:text="${blog.getPubDate()}">1</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
